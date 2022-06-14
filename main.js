@@ -9,6 +9,10 @@ const findTotalAmount = () => {
                   input.rate.splice(j, 1);
                   input.code.splice(j, 1);
                   input.amount.splice(j, 1);
+                  input={
+                  ...input,
+                     code:[...input.code.map((i)=>(String(parseInt(i.toString(8))).padStart(4,'0')))]
+                  }
                   console.log('rate',input.rate);
                   console.log('amount',input.amount);
                   console.log('code',input.code);
